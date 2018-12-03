@@ -1,4 +1,4 @@
-package ru.SilirdCo.Lab6.Main;
+package ru.SilirdCo.Lab6.Main.Frames;
 
 import javafx.scene.Node;
 import javafx.scene.control.Label;

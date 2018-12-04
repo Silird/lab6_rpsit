@@ -104,7 +104,7 @@ public class ClientFrameController implements Initializable {
         butIpPhoneClear.setOnAction(event -> {
             butIpPhoneClear.setDisable(true);
 
-
+            intIpPhoneId.setInteger(0);
             textIpPhoneId.setText("");
             textIpPhoneName.setText("");
             textIpPhoneNumber.setText("");
@@ -144,7 +144,7 @@ public class ClientFrameController implements Initializable {
         butDepartmentClear.setOnAction(event -> {
             butDepartmentClear.setDisable(true);
 
-
+            intDepartmentId.setInteger(0);
             textDepartmentId.setText("");
             textDepartmentName.setText("");
             textDepartmentNumber.setText("");
@@ -189,7 +189,7 @@ public class ClientFrameController implements Initializable {
         butEmployerClear.setOnAction(event -> {
             butEmployerClear.setDisable(true);
 
-
+            intEmployerId.setInteger(0);
             textEmployerId.setText("");
             textEmployerName.setText("");
             textEmployerDepartment.setText("");

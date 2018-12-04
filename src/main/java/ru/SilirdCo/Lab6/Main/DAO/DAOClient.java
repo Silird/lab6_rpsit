@@ -282,7 +282,7 @@ public class DAOClient implements IDAO {
             DataInputStream in = new DataInputStream(socket.getInputStream());
             DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 
-            out.writeInt(ID_GET_IP_PHONE_BY_NAME);
+            out.writeInt(ID_GET_IP_PHONE_BY_NUMBER);
 
             out.writeUTF(number);
             out.flush();

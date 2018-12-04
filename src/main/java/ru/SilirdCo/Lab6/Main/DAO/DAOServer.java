@@ -39,9 +39,9 @@ public class DAOServer implements IDAO {
             rs = c.createStatement().executeQuery(sql);
             while(rs.next()) {
                 Department department = new Department();
-                department.setId(rs.getInt(0));
-                department.setName(rs.getString(1));
-                department.setNumber(rs.getString(2));
+                department.setId(rs.getInt(1));
+                department.setName(rs.getString(2));
+                department.setNumber(rs.getString(3));
 
                 result.add(department);
             }
@@ -69,11 +69,11 @@ public class DAOServer implements IDAO {
                 IpPhone ipPhone = new IpPhone();
 
                 Employer employer = new Employer();
-                employer.setId(rs.getInt(0));
-                employer.setName(rs.getString(1));
-                department.setId(rs.getInt(2));
+                employer.setId(rs.getInt(1));
+                employer.setName(rs.getString(2));
+                department.setId(rs.getInt(3));
                 employer.setDepartment(department);
-                ipPhone.setId(rs.getInt(3));
+                ipPhone.setId(rs.getInt(4));
                 employer.setIpPhone(ipPhone);
 
                 result.add(employer);
@@ -104,9 +104,9 @@ public class DAOServer implements IDAO {
             rs = c.createStatement().executeQuery(sql);
             while(rs.next()) {
                 IpPhone ipPhone = new IpPhone();
-                ipPhone.setId(rs.getInt(0));
-                ipPhone.setName(rs.getString(1));
-                ipPhone.setNumber(rs.getString(2));
+                ipPhone.setId(rs.getInt(1));
+                ipPhone.setName(rs.getString(2));
+                ipPhone.setNumber(rs.getString(3));
 
                 result.add(ipPhone);
             }
@@ -131,9 +131,9 @@ public class DAOServer implements IDAO {
             ResultSet rs = stmt.executeQuery(sql);
 
             if (rs.next()) {
-                department.setId(rs.getInt(0));
-                department.setName(rs.getString(1));
-                department.setNumber(rs.getString(2));
+                department.setId(rs.getInt(1));
+                department.setName(rs.getString(2));
+                department.setNumber(rs.getString(3));
             }
         }
         catch (SQLException ex) {
@@ -155,9 +155,9 @@ public class DAOServer implements IDAO {
             ResultSet rs = stmt.executeQuery(sql);
 
             if (rs.next()) {
-                department.setId(rs.getInt(0));
-                department.setName(rs.getString(1));
-                department.setNumber(rs.getString(2));
+                department.setId(rs.getInt(1));
+                department.setName(rs.getString(2));
+                department.setNumber(rs.getString(3));
             }
         }
         catch (SQLException ex) {
@@ -179,9 +179,9 @@ public class DAOServer implements IDAO {
             ResultSet rs = stmt.executeQuery(sql);
 
             if (rs.next()) {
-                department.setId(rs.getInt(0));
-                department.setName(rs.getString(1));
-                department.setNumber(rs.getString(2));
+                department.setId(rs.getInt(1));
+                department.setName(rs.getString(2));
+                department.setNumber(rs.getString(3));
             }
         }
         catch (SQLException ex) {
@@ -206,11 +206,11 @@ public class DAOServer implements IDAO {
                 Department department = new Department();
                 IpPhone ipPhone = new IpPhone();
 
-                employer.setId(rs.getInt(0));
-                employer.setName(rs.getString(1));
-                department.setId(rs.getInt(2));
+                employer.setId(rs.getInt(1));
+                employer.setName(rs.getString(2));
+                department.setId(rs.getInt(3));
                 employer.setDepartment(department);
-                ipPhone.setId(rs.getInt(3));
+                ipPhone.setId(rs.getInt(4));
                 employer.setIpPhone(ipPhone);
             }
         }
@@ -243,11 +243,11 @@ public class DAOServer implements IDAO {
                 Department department = new Department();
                 IpPhone ipPhone = new IpPhone();
 
-                employer.setId(rs.getInt(0));
-                employer.setName(rs.getString(1));
-                department.setId(rs.getInt(2));
+                employer.setId(rs.getInt(1));
+                employer.setName(rs.getString(2));
+                department.setId(rs.getInt(3));
                 employer.setDepartment(department);
-                ipPhone.setId(rs.getInt(3));
+                ipPhone.setId(rs.getInt(4));
                 employer.setIpPhone(ipPhone);
             }
         }
@@ -269,7 +269,7 @@ public class DAOServer implements IDAO {
     public Employer getEmployerByDepartment(String nameDepartment) {
         Department tmp = getDepartmentByName(nameDepartment);
 
-        String sql = "select * from Employers where idDepartment=\""+ tmp.getId() + "\"";
+        String sql = "select * from Employers where department=\""+ tmp.getId() + "\"";
 
         Employer employer = new Employer();
 
@@ -282,11 +282,11 @@ public class DAOServer implements IDAO {
                 Department department = new Department();
                 IpPhone ipPhone = new IpPhone();
 
-                employer.setId(rs.getInt(0));
-                employer.setName(rs.getString(1));
-                department.setId(rs.getInt(2));
+                employer.setId(rs.getInt(1));
+                employer.setName(rs.getString(2));
+                department.setId(rs.getInt(3));
                 employer.setDepartment(department);
-                ipPhone.setId(rs.getInt(3));
+                ipPhone.setId(rs.getInt(4));
                 employer.setIpPhone(ipPhone);
             }
         }
@@ -308,7 +308,7 @@ public class DAOServer implements IDAO {
     public Employer getEmployerByIpPhone(String nameIpPhone) {
         IpPhone tmp = getIpPhoneByName(nameIpPhone);
 
-        String sql = "select * from Employers where idIpPhone=\""+ tmp.getId() + "\"";
+        String sql = "select * from Employers where ipPhone=\""+ tmp.getId() + "\"";
 
         Employer employer = new Employer();
 
@@ -321,11 +321,11 @@ public class DAOServer implements IDAO {
                 Department department = new Department();
                 IpPhone ipPhone = new IpPhone();
 
-                employer.setId(rs.getInt(0));
-                employer.setName(rs.getString(1));
-                department.setId(rs.getInt(2));
+                employer.setId(rs.getInt(1));
+                employer.setName(rs.getString(2));
+                department.setId(rs.getInt(3));
                 employer.setDepartment(department);
-                ipPhone.setId(rs.getInt(3));
+                ipPhone.setId(rs.getInt(4));
                 employer.setIpPhone(ipPhone);
             }
         }
@@ -355,9 +355,9 @@ public class DAOServer implements IDAO {
             ResultSet rs = stmt.executeQuery(sql);
 
             if (rs.next()) {
-                ipPhone.setId(rs.getInt(0));
-                ipPhone.setName(rs.getString(1));
-                ipPhone.setNumber(rs.getString(2));
+                ipPhone.setId(rs.getInt(1));
+                ipPhone.setName(rs.getString(2));
+                ipPhone.setNumber(rs.getString(3));
             }
         }
         catch (SQLException ex) {
@@ -379,9 +379,9 @@ public class DAOServer implements IDAO {
             ResultSet rs = stmt.executeQuery(sql);
 
             if (rs.next()) {
-                ipPhone.setId(rs.getInt(0));
-                ipPhone.setName(rs.getString(1));
-                ipPhone.setNumber(rs.getString(2));
+                ipPhone.setId(rs.getInt(1));
+                ipPhone.setName(rs.getString(2));
+                ipPhone.setNumber(rs.getString(3));
             }
         }
         catch (SQLException ex) {
@@ -403,9 +403,9 @@ public class DAOServer implements IDAO {
             ResultSet rs = stmt.executeQuery(sql);
 
             if (rs.next()) {
-                ipPhone.setId(rs.getInt(0));
-                ipPhone.setName(rs.getString(1));
-                ipPhone.setNumber(rs.getString(2));
+                ipPhone.setId(rs.getInt(1));
+                ipPhone.setName(rs.getString(2));
+                ipPhone.setNumber(rs.getString(3));
             }
         }
         catch (SQLException ex) {
